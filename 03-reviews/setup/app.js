@@ -40,4 +40,12 @@ const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.nex-btn');
 const randomBtn = document.querySelector('.random-btn');
 
+// set starting item
+let currentItem = 0;
+
+// load initial item
+window.addEventListener('DOMContentLoaded', () => {
+    const item = reviews[currentItem];
+    img.src = item.img;
+})
 
