@@ -1,3 +1,4 @@
+// items
 const menu = [
   {
     id: 1,
@@ -72,3 +73,13 @@ const menu = [
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
+
+const sectionCenter = document.querySelector(".section-center");
+
+window.addEventListener("DOMContentLoaded", () => {
+  let displayMenu = menu.map((item) => {
+    // console.log(item);
+    return `<h1>${item.title}</h1>`;
+  });
+  console.log(displayMenu);
+});
