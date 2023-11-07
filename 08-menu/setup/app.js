@@ -85,7 +85,18 @@ window.addEventListener("DOMContentLoaded", () => {
 // filter items
 filterBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    console.log(e.currentTarget.dataset.id);
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = menu.filter((menuItem) => {
+      if (menuItem.category === category) {
+        return menuItem;
+      }
+    });
+    if (category === "all") {
+      displayMenuItems(menu);
+    } else {
+      displayMenuItems(menuCategory);
+    }
+    // console.log(menuCategory);
   });
 });
 
