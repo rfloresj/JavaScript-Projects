@@ -1,3 +1,7 @@
+// get only unique categories - HARDEST ONE
+// iterate over categories return buttons
+// make sure to select buttons when they are available
+
 // items
 const menu = [
   {
@@ -72,6 +76,14 @@ const menu = [
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: "steak dinner",
+    category: "dinner",
+    price: 39.99,
+    img: "./images/item-10.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
 ];
 
 const sectionCenter = document.querySelector(".section-center");
@@ -81,6 +93,11 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 // load items
 window.addEventListener("DOMContentLoaded", () => {
   displayMenuItems(menu);
+  const categories = menu.map((item) => {
+    return item.category;
+  });
+
+  console.log(categories);
 });
 // filter items
 filterBtns.forEach((btn) => {
