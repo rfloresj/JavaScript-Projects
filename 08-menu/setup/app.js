@@ -93,9 +93,15 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 // load items
 window.addEventListener("DOMContentLoaded", () => {
   displayMenuItems(menu);
-  const categories = menu.map((item) => {
-    return item.category;
-  });
+  const categories = menu.reduce(
+    (values, item) => {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ["all"]
+  );
 
   console.log(categories);
 });
