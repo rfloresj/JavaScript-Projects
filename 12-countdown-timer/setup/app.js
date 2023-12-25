@@ -26,7 +26,7 @@ const giveaway = document.querySelector(".giveaway");
 const deadline = document.querySelector(".deadline");
 const items = document.querySelectorAll(".deadline-format h4");
 
-let futureDate = new Date(2024, 3, 25, 11, 30, 0);
+let futureDate = new Date(2024, 3, 25, 5, 30, 0);
 
 const year = futureDate.getFullYear();
 const hours = futureDate.getHours();
@@ -64,8 +64,16 @@ function getRemainingTime() {
 
   // set values array
   const values = [days, hours, minutes, seconds];
+
+  function format(item) {
+    if (item < 10) {
+      return (item = `0${item}`);
+    }
+    return item;
+  }
+
   items.forEach((item, index) => {
-    item.innerHTML = values[index];
+    item.innerHTML = format(values[index]);
   });
 }
 
