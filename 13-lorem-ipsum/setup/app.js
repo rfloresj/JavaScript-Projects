@@ -18,5 +18,6 @@ const result = document.querySelector(".lorem-text");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("hello");
+  const value = parseInt(amount.value);
+  console.log(value);
 });
