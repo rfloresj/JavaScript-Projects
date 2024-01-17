@@ -82,8 +82,16 @@ function clearItems() {
   // localStorage.removeItem("item");
 }
 // delete function
-function deleteItem() {
-  console.log("item deleted");
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  list.removeChild(element);
+  if (list.children.length === 0) {
+    container.classList.remove("show-container");
+  }
+  displayAlert("item removed", "danger");
+  setBackToDefault();
+  // remove from local storage
+  removeFromLocalStorage(id);
 }
 // edit function
 function editItem() {
