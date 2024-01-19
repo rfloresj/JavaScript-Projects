@@ -95,8 +95,15 @@ function deleteItem(e) {
   // removeFromLocalStorage(id);
 }
 // edit function
-function editItem() {
-  console.log("edit item");
+function editItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  // set edit item
+  editElement = e.currentTarget.parentElement.previousElementSibling;
+  // set form value
+  grocery.value = editElement.innerHTML;
+  editFlag = true;
+  editID = element.dataset.id;
+  submitBtn.textContent = "edit";
 }
 // set back to default
 function setBackToDefault() {
